@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // @ts-ignore
 const preset_typescript_1 = __importDefault(require("@babel/preset-typescript"));
 // @ts-ignore
-const plugin_transform_typescript_1 = __importDefault(require("@babel/plugin-transform-typescript"));
-// @ts-ignore
 const plugin_proposal_decorators_1 = __importDefault(require("@babel/plugin-proposal-decorators"));
 // @ts-ignore
 const plugin_proposal_class_properties_1 = __importDefault(require("@babel/plugin-proposal-class-properties"));
@@ -18,12 +16,11 @@ const plugin_proposal_optional_chaining_1 = __importDefault(require("@babel/plug
 function $(_, options) {
     const result = {
         presets: [
-            preset_typescript_1.default,
-        ],
-        plugins: [
-            [plugin_transform_typescript_1.default, {
+            [preset_typescript_1.default, {
                     allowNamespaces: true,
                 }],
+        ],
+        plugins: [
             [plugin_proposal_decorators_1.default, {
                     legacy: true
                 }],
