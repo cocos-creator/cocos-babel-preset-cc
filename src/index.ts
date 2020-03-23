@@ -2,8 +2,6 @@ import * as babel from '@babel/core';
 // @ts-ignore
 import presetTypeScript from '@babel/preset-typescript';
 // @ts-ignore
-import pluginTypeScript from '@babel/plugin-transform-typescript';
-// @ts-ignore
 import pluginDecorators from '@babel/plugin-proposal-decorators';
 // @ts-ignore
 import pluginClassProperties from '@babel/plugin-proposal-class-properties';
@@ -15,13 +13,11 @@ import pluginOptionalChaining from '@babel/plugin-proposal-optional-chaining';
 function $ (_: any, options: $.Options): babel.PluginItem {
     const result = {
         presets: [
-            presetTypeScript,
-        ],
-        plugins: [
-            [pluginTypeScript, {
+            [presetTypeScript, {
                 allowNamespaces: true,
             }],
-            
+        ],
+        plugins: [
             [pluginDecorators, {
                 legacy: true
             }],
