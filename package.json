@@ -1,11 +1,12 @@
 {
   "name": "@cocos/babel-preset-cc",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "",
   "main": "dist/index.js",
   "homepage": "http://www.cocos.com",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "author": "",
   "license": "MIT",
@@ -13,11 +14,12 @@
     "@types/babel__core": "^7.1.3"
   },
   "dependencies": {
+    "@babel/helper-plugin-utils": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
     "@babel/plugin-proposal-optional-chaining": "^7.9.0",
-    "@babel/preset-typescript": "^7.9.0"
+    "@babel/plugin-transform-typescript": "^7.9.4"
   },
   "peerDependencies": {
     "@babel/core": "^7.9.0"
