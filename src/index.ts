@@ -10,6 +10,8 @@ import pluginNullishCoalescingOperator from '@babel/plugin-proposal-nullish-coal
 // @ts-ignore
 import pluginOptionalChaining from '@babel/plugin-proposal-optional-chaining';
 // @ts-ignore
+import pluginLogicalAssignmentOperators from '@babel/plugin-proposal-logical-assignment-operators';
+// @ts-ignore
 import { declare } from '@babel/helper-plugin-utils';
 
 const $ = declare((api: any, {
@@ -48,6 +50,9 @@ const $ = declare((api: any, {
     
                 // ?. operator
                 pluginOptionalChaining,
+
+                // ||= &&=
+                pluginLogicalAssignmentOperators,
             ]
         }],
     }
