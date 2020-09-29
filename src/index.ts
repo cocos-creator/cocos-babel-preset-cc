@@ -13,6 +13,8 @@ import pluginOptionalChaining from '@babel/plugin-proposal-optional-chaining';
 import pluginLogicalAssignmentOperators from '@babel/plugin-proposal-logical-assignment-operators';
 // @ts-ignore
 import { declare } from '@babel/helper-plugin-utils';
+// @ts-ignore
+import pluginConstEnum from 'babel-plugin-const-enum';
 
 const $ = declare((api: any, {
     allowDeclareFields,
@@ -31,6 +33,11 @@ const $ = declare((api: any, {
     return {
         overrides: [{
             plugins: [
+                // TS const enum
+                [pluginConstEnum, {
+                    transform: 'constObject'
+                }],
+
                 [pluginTransformTypeScript, {
                     allowNamespaces: true,
                     allowDeclareFields,
@@ -56,7 +63,7 @@ const $ = declare((api: any, {
             ]
         }],
     }
-})
+});
 
 namespace $ {
     export type Options = Partial<{
