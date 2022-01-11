@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeScript const enum 1`] = `
+"var MyEnum = {
+  A: 1,
+  B: 1,
+  C: 2,
+  D: 2,
+  E: 1,
+  F: 2,
+  G: 1,
+  H: 1,
+  I: 1048576
+};"
+`;
+
+exports[`allowDeclareFields 1`] = `
+"function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\\"value\\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \\"prototype\\", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var A = /*#__PURE__*/_createClass(function A() {
+  _classCallCheck(this, A);
+
+  _defineProperty(this, \\"bar\\", void 0);
+
+  _defineProperty(this, \\"prop\\", void 0);
+
+  _defineProperty(this, \\"prop1\\", void 0);
+} // Initialized to undefined
+);"
+`;
+
+exports[`onlyRemoveTypeImports: false 1`] = `
+"import { B } from 'b';
+console.log(B);"
+`;
+
+exports[`onlyRemoveTypeImports: true 1`] = `
+"import { A } from 'a';
+import { B } from 'b';
+console.log(B);"
+`;
